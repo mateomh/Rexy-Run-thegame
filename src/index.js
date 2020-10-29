@@ -1,6 +1,11 @@
+/* eslint-disable no-new */
+import 'phaser';
+import { SimpleScene } from './scenes/simple-scene';
 
-const message = document.createElement('div');
-message.textContent = 'I was put here by JavaScript!';
-document.body.appendChild(message);
-// const element = document.getElementsByTagName('body');
-console.log('hola');
+const gameConfig = {
+  width: 680,
+  height: 400,
+  scene: SimpleScene,
+};
+
+new Phaser.Game(gameConfig);
