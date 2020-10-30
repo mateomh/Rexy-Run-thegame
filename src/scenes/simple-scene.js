@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/prefer-default-export, no-undef */
 import cokecan from '../assets/cokecan.png';
 
 export class SimpleScene extends Phaser.Scene {

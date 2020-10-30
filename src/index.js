@@ -1,5 +1,5 @@
-/* eslint-disable no-new */
-import 'phaser';
+/* eslint-disable  */
+import * as Phaser from 'phaser';
 import { SimpleScene } from './scenes/simple-scene';
 
 const gameConfig = {
@@ -8,4 +8,4 @@ const gameConfig = {
   scene: SimpleScene,
 };
 
-new Phaser.Game(gameConfig);
+let game = new Phaser.Game(gameConfig);
