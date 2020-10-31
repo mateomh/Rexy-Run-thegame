@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="flash0.ai"
+   x="0px"
+   y="0px"
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   xml:space="preserve"
+   sodipodi:docname="easter_egg_02.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><title
+   id="title858">Easter Egg</title><metadata
+   id="metadata48"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title>Easter Egg</dc:title><cc:license
+         rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" /><dc:creator><cc:Agent><dc:title>Glitch</dc:title></cc:Agent></dc:creator><dc:source>https://opengameart.org/node/20149</dc:source></cc:Work><cc:License
+       rdf:about="http://creativecommons.org/publicdomain/zero/1.0/"><cc:permits
+         rdf:resource="http://creativecommons.org/ns#Reproduction" /><cc:permits
+         rdf:resource="http://creativecommons.org/ns#Distribution" /><cc:permits
+         rdf:resource="http://creativecommons.org/ns#DerivativeWorks" /></cc:License></rdf:RDF></metadata><defs
+   id="defs46" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1025"
+   id="namedview44"
+   showgrid="false"
+   inkscape:zoom="0.55625734"
+   inkscape:cx="239.07143"
+   inkscape:cy="21.889227"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="flash0.ai"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0" />
+<g
+   id="g41"
+   transform="matrix(10.834052,0,0,10.834052,0.24122902,26.470515)">
+	
+		<radialGradient
+   id="SVGID_1_"
+   cx="-1.3887"
+   cy="-12.4092"
+   r="12.373"
+   gradientTransform="matrix(-0.2807,0.9598,1.1476,0.3356,26.1511,7.6477)"
+   gradientUnits="userSpaceOnUse">
+		<stop
+   offset="0"
+   style="stop-color:#D9FFED"
+   id="stop2" />
+		<stop
+   offset="0.2039"
+   style="stop-color:#99FFD0"
+   id="stop4" />
+		<stop
+   offset="1"
+   style="stop-color:#4E826A"
+   id="stop6" />
+	</radialGradient>
+	<path
+   style="clip-rule:evenodd;fill:url(#SVGID_1_);fill-rule:evenodd"
+   d="M 10.3,18 C 9.933,17.833 9.567,17.684 9.2,17.55 L 8.4,17.15 C 8.233,17.017 8.05,16.9 7.85,16.8 l -0.4,-0.4 3,-0.25 -1.3,-0.801 C 8.75,15.082 8.167,14.533 7.4,13.7 l -1,-1.15 1.4,-0.2 c 0.6,-0.1 1.333,-0.083 2.2,0.051 L 6.45,8.55 7.55,8.45 c 0.7,-0.067 1.867,-0.4 3.5,-1 0.033,0 -0.233,-0.367 -0.8,-1.1 L 8.7,3.75 9.4,3.55 C 9.667,3.383 10.867,3.167 13,2.9 15.134,2.633 16.217,2.517 16.25,2.55 L 14.3,0.4 c 0.8,0.167 1.5,0.35 2.101,0.55 L 17.85,1.5 c 2.101,1.067 3.684,2.733 4.75,5 1.233,2.467 1.334,4.75 0.301,6.85 -1.034,2.2 -2.717,3.75 -5.051,4.65 -2.133,0.833 -4.283,0.967 -6.449,0.4 z"
+   id="path9"
+   inkscape:connector-curvature="0" />
+	
+		<radialGradient
+   id="SVGID_2_"
+   cx="0.1938"
+   cy="-13.6001"
+   r="13.0495"
+   gradientTransform="matrix(-0.2804,0.9599,1.1484,0.3355,28.6729,8.3772)"
+   gradientUnits="userSpaceOnUse">
+		<stop
+   offset="0"
+   style="stop-color:#FFFDE8"
+   id="stop11" />
+		<stop
+   offset="0.149"
+   style="stop-color:#F8F6E0"
+   id="stop13" />
+		<stop
+   offset="0.3804"
+   style="stop-color:#E6E3CB"
+   id="stop15" />
+		<stop
+   offset="0.6627"
+   style="stop-color:#C8C4A8"
+   id="stop17" />
+		<stop
+   offset="0.9843"
+   style="stop-color:#9E9978"
+   id="stop19" />
+		<stop
+   offset="1"
+   style="stop-color:#9C9775"
+   id="stop21" />
+	</radialGradient>
+	<path
+   style="clip-rule:evenodd;fill:url(#SVGID_2_);fill-rule:evenodd"
+   d="M 7.85,16.8 C 7.117,16.333 6.383,15.817 5.65,15.25 L 8,15.15 6.7,14.35 C 6.266,14.083 5.666,13.534 4.9,12.701 l -0.95,-1.15 1.35,-0.3 c 0.633,-0.066 1.383,-0.05 2.25,0.05 L 4.05,7.451 5.1,7.351 C 5.767,7.283 6.95,6.967 8.65,6.4 L 7.85,5.3 6.3,2.7 7,2.45 C 7.267,2.317 8.467,2.117 10.6,1.85 12.733,1.583 13.816,1.467 13.85,1.5 l -1.2,-1.35 c 1.166,0.1 2.283,0.317 3.35,0.65 l 0.4,0.15 C 15.8,0.75 15.1,0.567 14.3,0.4 l 1.95,2.15 C 16.217,2.517 15.134,2.633 13,2.9 10.867,3.167 9.667,3.383 9.4,3.55 l -0.7,0.2 1.55,2.6 c 0.567,0.733 0.833,1.1 0.8,1.1 -1.633,0.6 -2.8,0.933 -3.5,1 L 6.45,8.55 10,12.4 C 9.133,12.266 8.4,12.25 7.8,12.349 l -1.4,0.2 1,1.15 c 0.767,0.833 1.35,1.383 1.75,1.649 l 1.3,0.801 -3,0.25 z M 10.3,18 10,17.95 C 9.7,17.816 9.433,17.683 9.2,17.55 9.567,17.684 9.933,17.833 10.3,18 Z"
+   id="path24"
+   inkscape:connector-curvature="0" />
+	
+		<radialGradient
+   id="SVGID_3_"
+   cx="-0.044399999"
+   cy="-13.8086"
+   r="11.3848"
+   gradientTransform="matrix(-0.4121,0.9111,1.0817,0.4892,27.5178,12.4466)"
+   gradientUnits="userSpaceOnUse">
+		<stop
+   offset="0"
+   style="stop-color:#FFBCB8"
+   id="stop26" />
+		<stop
+   offset="0.2392"
+   style="stop-color:#FF7C73"
+   id="stop28" />
+		<stop
+   offset="0.3608"
+   style="stop-color:#ED736B"
+   id="stop30" />
+		<stop
+   offset="0.6039"
+   style="stop-color:#BF5A55"
+   id="stop32" />
+		<stop
+   offset="0.9451"
+   style="stop-color:#763332"
+   id="stop34" />
+		<stop
+   offset="1"
+   style="stop-color:#692C2C"
+   id="stop36" />
+	</radialGradient>
+	<path
+   style="clip-rule:evenodd;fill:url(#SVGID_3_);fill-rule:evenodd"
+   d="m 9.2,17.55 c 0.233,0.134 0.5,0.267 0.8,0.4 C 7.533,16.983 5.233,15.283 3.1,12.849 0.3,9.683 -0.617,6.9 0.35,4.5 1.25,2.1 3.783,0.65 7.95,0.15 11.017,-0.183 13.7,0.033 16,0.8 14.934,0.467 13.816,0.25 12.65,0.15 l 1.2,1.35 C 13.817,1.467 12.734,1.583 10.6,1.85 8.466,2.117 7.267,2.317 7,2.45 L 6.3,2.7 7.85,5.3 8.65,6.4 C 6.95,6.967 5.767,7.283 5.1,7.35 l -1.05,0.1 3.5,3.85 C 6.683,11.2 5.933,11.184 5.3,11.25 l -1.35,0.3 0.95,1.15 c 0.767,0.833 1.367,1.383 1.8,1.649 L 8,15.15 5.65,15.25 c 0.733,0.566 1.467,1.083 2.2,1.55 0.2,0.101 0.383,0.217 0.55,0.351 z"
+   id="path39"
+   inkscape:connector-curvature="0" />
+</g>
+</svg>

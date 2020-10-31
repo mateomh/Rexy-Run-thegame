@@ -1,11 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
     app: './src/index.js',
-    'production-dependencies': ['phaser'],
+    // 'production-dependencies': ['phaser'],
   },
   output: {
     filename: 'app.main.js',
@@ -77,10 +77,10 @@ module.exports = {
       'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'production-dependencies',
-      filename: 'production-dependencies.bundle.js',
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'production-dependencies',
+    //   filename: 'production-dependencies.bundle.js',
+    // }),
 
     // new CopyWebpackPlugin([
     //   // {
