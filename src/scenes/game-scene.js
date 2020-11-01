@@ -4,6 +4,7 @@ import player from '../assets/character/dino/general.png';
 import platform from '../assets/worlds/field/platforms/platform2.png';
 import gameOptions from '../config/gameoptions';
 import gameConfig from '../config/gameconfig';
+import Player from '../player';
 
 
 export class GameScene extends Phaser.Scene {
@@ -11,6 +12,10 @@ export class GameScene extends Phaser.Scene {
     this.load.image('main-background', background);
     this.load.image('player', player);
     this.load.image('platform', platform);
+
+    const dino = new Player();
+    dino.makePreload(this);
+
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
@@ -19,12 +24,16 @@ export class GameScene extends Phaser.Scene {
 
     this.platform = this.physics.add.sprite(400, gameConfig.height, 'platform');
     this.platform.body.immovable = true;
-    this.platform.body.setVelocityX(gameOptions.platformStartSpeed * -0.1);
+    this.platform.body.setVelocityX(gameOptions.platformStartSpeed * -0.5);
 
-    this.player = this.physics.add.sprite(gameOptions.playerStartPosition, gameConfig.height / 2, 'player');
+    const dino = new Player();
+    dino.makeAnimation(this);
+
+    this.player = this.physics.add.sprite(gameOptions.playerStartPosition, gameConfig.height / 2, 'run1');
     this.player.setScale(0.3);
-    this.player.setGravityY(gameOptions.playerGravity);
-    this.player.body.setVelocityX(gameOptions.platformStartSpeed * 0.1);
+    this.player.play('run');
+    // this.player.setGravityY(gameOptions.playerGravity);
+    // this.player.body.setVelocityX(gameOptions.platformStartSpeed * 0.5);
 
     this.physics.add.collider(this.player, this.platform);
     // this.add.tileSprite(500, 300, 1000, 600, 'main-background');
@@ -46,6 +55,8 @@ export class GameScene extends Phaser.Scene {
   }
 
   jump() {
-    this.player.setVelocityY(gameOptions.jumpForce * -1);
+    if (this.player.body.touching.down) {
+      this.player.setVelocityY(gameOptions.jumpForce * -1);
+    }
   }
 }
