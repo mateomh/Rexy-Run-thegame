@@ -18,13 +18,14 @@ export class GameScene extends Phaser.Scene {
     this.add.image(500, 300, 'main-background');
 
     this.platform = this.physics.add.sprite(400, gameConfig.height, 'platform');
-    // this.platform.active = true;
-    // this.platform.visible = true;
     this.platform.body.immovable = true;
+    this.platform.body.setVelocityX(gameOptions.platformStartSpeed * -0.1);
 
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, gameConfig.height / 2, 'player');
     this.player.setScale(0.3);
     this.player.setGravityY(gameOptions.playerGravity);
+    this.player.body.setVelocityX(gameOptions.platformStartSpeed * 0.1);
+
     this.physics.add.collider(this.player, this.platform);
     // this.add.tileSprite(500, 300, 1000, 600, 'main-background');
   }
