@@ -7,8 +7,8 @@ import dino6 from './assets/character/dino/run6.png';
 import dino7 from './assets/character/dino/run7.png';
 import dino8 from './assets/character/dino/run8.png';
 
-export default class Player {
-  makePreload(obj) {
+export default class Character {
+  static dinoRunPreload(obj) {
     obj.load.image('run1', dino1);
     obj.load.image('run2', dino2);
     obj.load.image('run3', dino3);
@@ -19,7 +19,7 @@ export default class Player {
     obj.load.image('run8', dino8);
   }
 
-  makeAnimation(obj) {
+  static dinoRunAnimation(obj) {
     obj.anims.create({
       key: 'run',
       frames: [

@@ -1,20 +1,17 @@
 /* eslint-disable import/prefer-default-export, no-undef */
 import background from '../assets/backgrounds/forest.png';
-import player from '../assets/character/dino/general.png';
 import platform from '../assets/worlds/field/platforms/platform2.png';
 import gameOptions from '../config/gameoptions';
 import gameConfig from '../config/gameconfig';
-import Player from '../player';
+import Character from '../player';
 
 
 export class GameScene extends Phaser.Scene {
   preload() {
     this.load.image('main-background', background);
-    this.load.image('player', player);
     this.load.image('platform', platform);
 
-    const dino = new Player();
-    dino.makePreload(this);
+    Character.dinoRunPreload(this);
 
     this.cursors = this.input.keyboard.createCursorKeys();
   }
@@ -26,8 +23,7 @@ export class GameScene extends Phaser.Scene {
     this.platform.body.immovable = true;
     this.platform.body.setVelocityX(gameOptions.platformStartSpeed * -0.5);
 
-    const dino = new Player();
-    dino.makeAnimation(this);
+    Character.dinoRunAnimation(this);
 
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, gameConfig.height / 2, 'run1');
     this.player.setScale(0.3);
