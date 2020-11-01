@@ -1,9 +1,10 @@
 /* eslint-disable  */
 import * as Phaser from 'phaser';
-import { SimpleScene } from './scenes/simple-scene';
 import { TitleScene } from './scenes/title-scene';
+import { GameScene } from './scenes/game-scene';
 import gameConfig from './config/gameconfig';
 
 let game = new Phaser.Game(gameConfig);
 game.scene.add('Title', TitleScene);
-game.scene.start('Title');
+game.scene.add('Game', GameScene);
+game.scene.start('Game');
