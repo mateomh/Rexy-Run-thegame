@@ -40,6 +40,12 @@ export class GameScene extends Phaser.Scene {
       console.log('right');
       // cam.scrollX += 3;
       this.player.x += 3;
+    } else if (this.cursors.up.isDown) {
+      this.jump();
     }
+  }
+
+  jump() {
+    this.player.setVelocityY(gameOptions.jumpForce * -1);
   }
 }
