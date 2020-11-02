@@ -36,14 +36,7 @@ export class GameScene extends Phaser.Scene {
     this.activePlatforms[0].body.setVelocityX(gameOptions.platformStartSpeed * -1);
 
     for (let i = 1; i < 3; i += 1) {
-      const platformIndex = Phaser.Math.Between(0, this.myPlatforms.length - 1);
-      const nextplatform = this.myPlatforms[platformIndex];
-      const nextWidth = this.myPlatformsWidths[platformIndex];
-      const gap = Phaser.Math.Between(gameOptions.minGap, gameOptions.maxGap);
-      const spawnPoint = this.activePlatforms[i - 1].x + (this.activePlatforms[i - 1].width / 2) + gap + (nextWidth / 2);
-      this.activePlatforms.push(this.physics.add.sprite(spawnPoint, gameConfig.height - 50, nextplatform));
-      this.activePlatforms[i].body.immovable = true;
-      this.activePlatforms[i].setVelocityX(gameOptions.platformStartSpeed * -1);
+      this.createPlatform();
     }
 
     Character.dinoRunAnimation(this);
@@ -78,15 +71,7 @@ export class GameScene extends Phaser.Scene {
     if (this.activePlatforms[0].x < (this.activePlatforms[0].width / 2) * -1) {
       this.activePlatforms[0].destroy();
       this.activePlatforms.shift();
-      const platformIndex = Phaser.Math.Between(0, this.myPlatforms.length - 1);
-      const nextplatform = this.myPlatforms[platformIndex];
-      const nextWidth = this.myPlatformsWidths[platformIndex];
-      const gap = Phaser.Math.Between(gameOptions.minGap, gameOptions.maxGap);
-      const spawnPoint = this.activePlatforms[this.activePlatforms.length - 1].x + (this.activePlatforms[this.activePlatforms.length - 1].width / 2) + gap + (nextWidth / 2);
-      const temp = this.physics.add.sprite(spawnPoint, gameConfig.height - 50, nextplatform);
-      temp.body.immovable = true;
-      temp.setVelocityX(gameOptions.platformStartSpeed * -1);
-      this.activePlatforms.push(temp);
+      this.createPlatform();
     }
   }
 
@@ -94,5 +79,17 @@ export class GameScene extends Phaser.Scene {
     if (this.player.body.touching.down) {
       this.player.setVelocityY(gameOptions.jumpForce * -1);
     }
+  }
+
+  createPlatform() {
+    const platformIndex = Phaser.Math.Between(0, this.myPlatforms.length - 1);
+    const nextplatform = this.myPlatforms[platformIndex];
+    const nextWidth = this.myPlatformsWidths[platformIndex];
+    const gap = Phaser.Math.Between(gameOptions.minGap, gameOptions.maxGap);
+    const spawnPoint = this.activePlatforms[this.activePlatforms.length - 1].x + (this.activePlatforms[this.activePlatforms.length - 1].width / 2) + gap + (nextWidth / 2);
+    const temp = this.physics.add.sprite(spawnPoint, gameConfig.height - 50, nextplatform);
+    temp.body.immovable = true;
+    temp.setVelocityX(gameOptions.platformStartSpeed * -1);
+    this.activePlatforms.push(temp);
   }
 }
