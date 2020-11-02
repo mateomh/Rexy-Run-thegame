@@ -91,9 +91,9 @@ export class GameScene extends Phaser.Scene {
     }
 
     this.sys.game.globals.score += 1;
-    console.log(this.sys.game.globals.score);
+    console.log(this.player.y);
 
-    if (this.sys.game.globals.score > 1000) {
+    if (this.gameover()) {
       this.scene.stop('Game');
       this.scene.start('Title');
     }
@@ -116,5 +116,13 @@ export class GameScene extends Phaser.Scene {
     temp.body.immovable = true;
     temp.setVelocityX(gameOptions.platformStartSpeed * -1);
     this.activePlatforms.push(temp);
+  }
+
+  gameover() {
+    if (this.player.y > gameConfig.height + (this.player.height / 2)) {
+      return true;
+    }
+
+    return false;
   }
 }
