@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export, no-undef */
+/* eslint-disable import/prefer-default-export, no-undef, max-len */
 import background from '../assets/background/forest.png';
 import platform from '../assets/platforms/initial.png';
 import smallp from '../assets/platforms/small.png';
@@ -68,7 +68,6 @@ export class GameScene extends Phaser.Scene {
 
     // Sets the jumps to 0 for the double jump
     this.jumps = 0;
-    this.score = 0;
   }
 
   update() {
@@ -91,8 +90,13 @@ export class GameScene extends Phaser.Scene {
       this.createPlatform();
     }
 
-    this.score += 1;
-    console.log(this.score);
+    this.sys.game.globals.score += 1;
+    console.log(this.sys.game.globals.score);
+
+    if (this.sys.game.globals.score > 1000) {
+      this.scene.stop('Game');
+      this.scene.start('Title');
+    }
   }
 
   jump() {

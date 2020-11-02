@@ -7,5 +7,6 @@ export class TitleScene extends Phaser.Scene {
 
   create() {
     // this.add.image(0, 0, 'title-background');
+    console.log(`your score: ${this.sys.game.globals.score}`);
   }
 }
