@@ -68,15 +68,13 @@ export class GameScene extends Phaser.Scene {
 
     // Sets the jumps to 0 for the double jump
     this.jumps = 0;
+    this.score = 0;
   }
 
   update() {
-    // // const cam = this.cameras.main;
     if (this.cursors.left.isDown) {
-      // cam.scrollX -= 3;
       this.player.x -= 3;
     } else if (this.cursors.right.isDown) {
-      // cam.scrollX += 3;
       this.player.x += 3;
     }
 
@@ -92,10 +90,12 @@ export class GameScene extends Phaser.Scene {
       this.activePlatforms.shift();
       this.createPlatform();
     }
+
+    this.score += 1;
+    console.log(this.score);
   }
 
   jump() {
-    console.log('jump');
     if (this.player.body.touching.down || this.jumps < 2) {
       this.player.setVelocityY(gameOptions.jumpForce * -1);
       this.jumps += 1;
