@@ -91,11 +91,10 @@ export class GameScene extends Phaser.Scene {
     }
 
     this.sys.game.globals.score += 1;
-    console.log(this.player.y);
 
     if (this.gameover()) {
       this.scene.stop('Game');
-      this.scene.start('Title');
+      this.scene.start('GameOver');
     }
   }
 
