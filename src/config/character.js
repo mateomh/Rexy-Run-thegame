@@ -1,11 +1,11 @@
-import dino1 from './assets/character/dino/run1.png';
-import dino2 from './assets/character/dino/run2.png';
-import dino3 from './assets/character/dino/run3.png';
-import dino4 from './assets/character/dino/run4.png';
-import dino5 from './assets/character/dino/run5.png';
-import dino6 from './assets/character/dino/run6.png';
-import dino7 from './assets/character/dino/run7.png';
-import dino8 from './assets/character/dino/run8.png';
+import dino1 from '../assets/character/dino/run1.png';
+import dino2 from '../assets/character/dino/run2.png';
+import dino3 from '../assets/character/dino/run3.png';
+import dino4 from '../assets/character/dino/run4.png';
+import dino5 from '../assets/character/dino/run5.png';
+import dino6 from '../assets/character/dino/run6.png';
+import dino7 from '../assets/character/dino/run7.png';
+import dino8 from '../assets/character/dino/run8.png';
 
 export default class Character {
   static dinoRunPreload(obj) {
