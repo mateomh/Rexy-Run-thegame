@@ -29,41 +29,60 @@ export class GameScene extends Phaser.Scene {
   }
 
   create() {
+    // Creates the background on the screen
     this.add.image(500, 300, 'main-background');
 
+    // Creates the intial logn platform for the begining of the game
     this.activePlatforms.push(this.physics.add.sprite(gameConfig.width - 200, gameConfig.height - 50, 'platform'));
+    // Makes the platform solid
     this.activePlatforms[0].body.immovable = true;
+    // Gives it a speed to move from left to right
     this.activePlatforms[0].body.setVelocityX(gameOptions.platformStartSpeed * -1);
 
+    // Creates 2 more ramdom platforms
     for (let i = 1; i < 3; i += 1) {
       this.createPlatform();
     }
 
+    // Creates The running animation
     Character.dinoRunAnimation(this);
 
+    // Adds the animation to the screen
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, gameConfig.height / 2, 'run1');
+    // Scales the character to fit the screen
     this.player.setScale(0.3);
+    // Starts playing the animation
     this.player.play('run');
+    // Gives the character a gravity to be pulled down
     this.player.setGravityY(gameOptions.playerGravity);
+    // Gives the character the same speed of the platforms but in opposite direction
+    // so it is not dragged by the platforms
     this.player.body.setVelocityX(gameOptions.platformStartSpeed);
 
+    // Makes a collision between the character and the platforms
     this.physics.add.collider(this.player, this.activePlatforms);
+
+    // Adding events to interact with the character
+    this.input.keyboard.on('keydown-UP', this.jump, this);
+    this.input.on('pointerdown', this.jump, this);
+
+    // Sets the jumps to 0 for the double jump
+    this.jumps = 0;
   }
 
   update() {
-    // const cam = this.cameras.main;
+    // // const cam = this.cameras.main;
     if (this.cursors.left.isDown) {
       // cam.scrollX -= 3;
       this.player.x -= 3;
     } else if (this.cursors.right.isDown) {
       // cam.scrollX += 3;
       this.player.x += 3;
-    } else if (this.cursors.up.isDown) {
-      this.jump();
     }
 
     if (this.player.body.touching.down) {
       this.player.body.setVelocityX(gameOptions.platformStartSpeed);
+      this.jumps = 0;
     } else {
       this.player.body.setVelocityX(0);
     }
@@ -76,8 +95,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   jump() {
-    if (this.player.body.touching.down) {
+    console.log('jump');
+    if (this.player.body.touching.down || this.jumps < 2) {
       this.player.setVelocityY(gameOptions.jumpForce * -1);
+      this.jumps += 1;
     }
   }
 
