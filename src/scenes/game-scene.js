@@ -10,7 +10,11 @@ import gameConfig from '../config/gameconfig';
 import Character from '../config/character';
 
 
-export class GameScene extends Phaser.Scene {
+export default class GameScene extends Phaser.Scene {
+  constructor() {
+    super('Game');
+  }
+
   preload() {
     this.load.image('main-background', background);
     this.load.image('platform', platform);

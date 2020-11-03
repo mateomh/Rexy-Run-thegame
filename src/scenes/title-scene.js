@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export, no-undef */
 
-export class TitleScene extends Phaser.Scene {
+export default class TitleScene extends Phaser.Scene {
   preload() {
     // this.load.image('title-background', background);
   }

@@ -2,7 +2,7 @@
 
 import gameoverLogo from '../assets/logos/gameover.png';
 
-export class GameOverScene extends Phaser.Scene {
+export default class GameOverScene extends Phaser.Scene {
   preload() {
     this.load.image('gameover', gameoverLogo);
   }
