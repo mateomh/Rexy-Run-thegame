@@ -14,7 +14,7 @@ export default class TitleScene extends Phaser.Scene {
     logo.setScale(logoScale);
 
     const playbtn = this.add.sprite((gameConfig.width / 4) * 3 + 50, (gameConfig.height / 4) * 3, 'play');
-    playbtn.setScale(0.6);
+    playbtn.setScale(1);
     playbtn.setInteractive();
 
     playbtn.on('pointerdown', this.playClick.bind(this));
