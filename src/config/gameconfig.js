@@ -1,3 +1,5 @@
+import * as Phaser from 'phaser';
+
 export default {
   type: Phaser.AUTO,
   width: 1000,
