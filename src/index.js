@@ -7,9 +7,18 @@ import BootScene from './scenes/boot-scene';
 import PreloaderScene from './scenes/preloader';
 import gameConfig from './config/gameconfig';
 
+import css from './css/styles.css';
+
+const header = document.getElementsByTagName('head')[0];
+const styleSheet = document.createElement('link');
+
+styleSheet.rel = 'stylesheet';
+styleSheet.href = css;
+
+header.appendChild(styleSheet);
+
 let game = new Phaser.Game(gameConfig);
-// game.score = 0;
-game.globals = { score: 0 };
+game.globals = { score: 0, username: '' };
 game.scene.add('Boot', BootScene);
 game.scene.add('Preload', PreloaderScene);
 game.scene.add('Title', TitleScene);

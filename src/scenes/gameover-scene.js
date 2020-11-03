@@ -32,6 +32,7 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   backClick() {
+    this.sys.game.globals.score = 0;
     this.scene.start('Game');
   }
 }
