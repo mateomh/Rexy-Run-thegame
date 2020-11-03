@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export, no-undef */
 import cokecan from '../assets/cokecan.png';
 
-export class SimpleScene extends Phaser.Scene {
+export default class SimpleScene extends Phaser.Scene {
   preload() {
     // this.load.image('cokecan', 'assets/cokecan.png');
     this.load.image('cokecan', cokecan);
