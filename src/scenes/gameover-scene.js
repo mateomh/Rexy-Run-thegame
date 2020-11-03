@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export, no-undef */
+import * as Phaser from 'phaser';
 
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
@@ -6,6 +6,10 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   create() {
+    const apiConn = this.sys.game.globals.apiLink;
+
+    // apiConn.addScore(this.sys.game.globals.username, this.sys.game.globals.score);
+
     const backbtn = this.add.sprite(80, 80, 'back');
     backbtn.setScale(0.4);
     backbtn.setInteractive();

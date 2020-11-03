@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import * as Phaser from 'phaser';
 import TitleScene from './scenes/title-scene';
 import GameScene from './scenes/game-scene';
@@ -8,6 +7,7 @@ import PreloaderScene from './scenes/preloader';
 import gameConfig from './config/gameconfig';
 
 import css from './css/styles.css';
+import ApiComms from './scoreAPI/api-comms';
 
 const header = document.getElementsByTagName('head')[0];
 const styleSheet = document.createElement('link');
@@ -17,8 +17,10 @@ styleSheet.href = css;
 
 header.appendChild(styleSheet);
 
-let game = new Phaser.Game(gameConfig);
-game.globals = { score: 0, username: '' };
+const apiLink = new ApiComms();
+
+const game = new Phaser.Game(gameConfig);
+game.globals = { score: 0, username: '', apiLink };
 game.scene.add('Boot', BootScene);
 game.scene.add('Preload', PreloaderScene);
 game.scene.add('Title', TitleScene);
