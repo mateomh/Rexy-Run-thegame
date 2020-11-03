@@ -1,6 +1,7 @@
 import * as Phaser from 'phaser';
 import mainlogo from '../assets/logos/main.png';
 import playbtn from '../assets/buttons/play.png';
+import playbtn2 from '../assets/buttons/play2.png';
 import Character from '../config/character';
 import gameConfig from '../config/gameconfig';
 
@@ -17,6 +18,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.load.image('mainlogo', mainlogo);
     this.load.image('play', playbtn);
+    this.load.image('play2', playbtn2);
 
     this.timedEvent = this.time.delayedCall(5000, this.ready, [], this);
   }
