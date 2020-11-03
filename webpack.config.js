@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -19,9 +18,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            // options: {
-            //   presets: ['env'],
-            // },
           },
         ],
       },
@@ -81,16 +77,5 @@ module.exports = {
     //   name: 'production-dependencies',
     //   filename: 'production-dependencies.bundle.js',
     // }),
-
-    // new CopyWebpackPlugin([
-    //   // {
-    //   //   from: path.resolve(__dirname, 'index.html'),
-    //   //   to: path.resolve(__dirname, 'dist'),
-    //   // },
-    //   {
-    //     from: path.resolve(__dirname, 'assets/', '**', '*'),
-    //     to: path.resolve(__dirname, 'dist/'),
-    //   },
-    // ]),
   ],
 };
