@@ -1,10 +1,4 @@
 /* eslint-disable import/prefer-default-export, no-undef, max-len */
-import background from '../assets/background/forest.png';
-import platform from '../assets/platforms/initial.png';
-import smallp from '../assets/platforms/small.png';
-import mediump from '../assets/platforms/medium.png';
-import largep from '../assets/platforms/large.png';
-import xlp from '../assets/platforms/extralarge.png';
 import gameOptions from '../config/gameoptions';
 import gameConfig from '../config/gameconfig';
 import Character from '../config/character';
@@ -15,24 +9,11 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
-  preload() {
-    this.load.image('main-background', background);
-    this.load.image('platform', platform);
+  create() {
     this.myPlatforms = ['small', 'medium', 'large', 'extralarge'];
     this.myPlatformsWidths = [233, 385, 516, 641];
-    this.load.image('small', smallp);
-    this.load.image('medium', mediump);
-    this.load.image('large', largep);
-    this.load.image('extralarge', xlp);
-
     this.activePlatforms = [];
-
-    Character.dinoRunPreload(this);
-
     this.cursors = this.input.keyboard.createCursorKeys();
-  }
-
-  create() {
     // Creates the background on the screen
     this.add.image(500, 300, 'main-background');
 

@@ -2,6 +2,10 @@
 import gameConfig from '../config/gameconfig';
 
 export default class TitleScene extends Phaser.Scene {
+  constructor() {
+    super('Title');
+  }
+
   create() {
     const logo = this.add.image((gameConfig.width / 2), (gameConfig.height / 2) - 50, 'mainlogo');
     logo.setScale(0.5);
