@@ -4,7 +4,7 @@
 
 > This is a game where a hungry T-rex goes jumping from platform to platform looking for some fresh and delicious cherries to eat until the gap is too big and he can't reach the next platform.
 
-![screenshot](./screenshots/title.png)
+![screenshot](./src/assets/character/dino/walk4.png)
 
 This game is a platformer made with the Phaser library as a Capstone Project for the JavaScript module from the Microverse technical curriculum.
 
