@@ -1,12 +1,18 @@
 import * as Phaser from 'phaser';
+
 import Character from '../config/character';
 import gameConfig from '../config/gameconfig';
 import mainlogo from '../assets/logos/main.png';
+import gameoverLogo from '../assets/logos/gameover.png';
+
 import playbtn from '../assets/buttons/play.png';
 import playbtn2 from '../assets/buttons/play2.png';
 import backbtn from '../assets/buttons/back.png';
 import backbtn2 from '../assets/buttons/back2.png';
-import gameoverLogo from '../assets/logos/gameover.png';
+import homebtn from '../assets/buttons/home.png';
+import homebtn2 from '../assets/buttons/home2.png';
+import leaderbtn from '../assets/buttons/leader.png';
+import leaderbtn2 from '../assets/buttons/leader2.png';
 
 import background from '../assets/background/forest.png';
 import platform from '../assets/platforms/initial.png';
@@ -36,6 +42,10 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('play2', playbtn2);
     this.load.image('back', backbtn);
     this.load.image('back2', backbtn2);
+    this.load.image('home', homebtn);
+    this.load.image('home2', homebtn2);
+    this.load.image('leader', leaderbtn);
+    this.load.image('leader2', leaderbtn2);
 
     // Game images
     this.load.image('main-background', background);

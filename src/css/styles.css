@@ -1,0 +1,23 @@
+::placeholder {
+  color: #d2e603;
+}
+
+#username {
+  position: absolute;
+  left: 650px;
+  top: 190px;
+  text-align: center;
+  background-color: #81b214;
+  color: #d2e603;
+  border: 5px solid greenyellow;
+  border-radius: 30px;
+  height: 80px;
+  width: 300px;
+  font-size: 30px;
+  font-weight: bolder;
+  outline: none;
+}
+
+.hide {
+  display: none;
+}

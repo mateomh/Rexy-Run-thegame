@@ -7,11 +7,14 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    const logo = this.add.image((gameConfig.width / 2), (gameConfig.height / 2) - 50, 'mainlogo');
-    logo.setScale(0.5);
+    const userInput = document.getElementById('username');
+    userInput.classList.toggle('hide');
+    const logoScale = 0.65;
+    const logo = this.add.image((680 * logoScale) / 1.5, (gameConfig.height / 2), 'mainlogo');
+    logo.setScale(logoScale);
 
-    const playbtn = this.add.sprite((gameConfig.width / 2), gameConfig.height - 100, 'play');
-    playbtn.setScale(0.4);
+    const playbtn = this.add.sprite((gameConfig.width / 4) * 3 + 50, (gameConfig.height / 4) * 3, 'play');
+    playbtn.setScale(1);
     playbtn.setInteractive();
 
     playbtn.on('pointerdown', this.playClick.bind(this));
@@ -26,6 +29,12 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   playClick() {
+    const userInput = document.getElementById('username');
+    if (userInput.value === '') return;
+
+    this.sys.game.globals.username = userInput.value;
+    userInput.value = '';
+    userInput.classList.toggle('hide');
     this.scene.start('Game');
   }
 }
