@@ -37,9 +37,8 @@ export default class ApiComms {
       body: JSON.stringify(scoreData),
     };
 
-    const data = await fetch(url, fetchOptions)
+    const data = await fetch(url, fetchOptions);
     const resp = await data.json(); // converts the response into json
-      // .catch(error => { return error; }); // if there is an error it logs it to the console
 
     return resp;
   }
