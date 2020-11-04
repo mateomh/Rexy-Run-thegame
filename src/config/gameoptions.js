@@ -1,7 +1,7 @@
 export default {
   platformStartSpeed: 200,
   minGap: 200,
-  maxGap: 500,
+  maxGap: 700,
   platformSizeRange: [50, 250],
   playerGravity: 900,
   jumpForce: 600,
