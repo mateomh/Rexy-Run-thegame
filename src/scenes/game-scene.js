@@ -76,6 +76,12 @@ export default class GameScene extends Phaser.Scene {
       this.createPlatform();
     }
 
+    if (this.activeItems[0].x < (this.activeItems[0].width / 2) * -1) {
+      this.activeItems[0].destroy();
+      this.activeItem.shift();
+      this.spawnItem();
+    }
+
     this.sys.game.globals.score += 1;
 
     if (this.gameover()) {
