@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export, no-undef, max-len */
+/* eslint-disable no-undef, max-len */
 import gameOptions from '../config/gameoptions';
 import gameConfig from '../config/gameconfig';
 import Character from '../config/character';
