@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export, no-undef, max-len */
+/* eslint-disable no-undef, max-len */
 import gameOptions from '../config/gameoptions';
 import gameConfig from '../config/gameconfig';
 import Character from '../config/character';
@@ -15,14 +15,13 @@ export default class GameScene extends Phaser.Scene {
     this.activePlatforms = [];
     this.activeItems = [];
     this.cursors = this.input.keyboard.createCursorKeys();
+
     // Creates the background on the screen
     this.add.image(500, 300, 'main-background');
 
-    // Creates the intial logn platform for the begining of the game
+    // Creates the intial long platform for the begining of the game
     this.activePlatforms.push(this.physics.add.sprite(gameConfig.width - 200, gameConfig.height - 50, 'platform'));
-    // Makes the platform solid
     this.activePlatforms[0].body.immovable = true;
-    // Gives it a speed to move from left to right
     this.activePlatforms[0].body.setVelocityX(gameOptions.platformStartSpeed * -1);
 
     // Creates 2 more ramdom platforms
@@ -35,11 +34,8 @@ export default class GameScene extends Phaser.Scene {
 
     // Adds the animation to the screen
     this.player = this.physics.add.sprite(gameOptions.playerStartPosition, gameConfig.height / 2, 'run1');
-    // Scales the character to fit the screen
     this.player.setScale(0.3);
-    // Starts playing the animation
     this.player.play('run');
-    // Gives the character a gravity to be pulled down
     this.player.setGravityY(gameOptions.playerGravity);
     // Gives the character the same speed of the platforms but in opposite direction
     // so it is not dragged by the platforms
@@ -49,7 +45,7 @@ export default class GameScene extends Phaser.Scene {
 
     // Makes a collision between the character and the platforms
     this.physics.add.collider(this.player, this.activePlatforms);
-
+    // makes an overlap event for when the player gets an item
     this.physics.add.overlap(this.player, this.activeItems, this.collectItem, null, this);
 
     // Adding events to interact with the character
