@@ -23,7 +23,7 @@ export default class ApiComms {
     return scores;
   }
 
-  addScore(username, score) {
+  async addScore(username, score) {
     const url = `${this.config.apiURL}${this.config.gameid}/scores/`;
     const scoreData = {
       user: username,
@@ -37,10 +37,9 @@ export default class ApiComms {
       body: JSON.stringify(scoreData),
     };
 
-    const resp = fetch(url, fetchOptions)
-      .then(data => { return data.json(); }) // converts the response into json
-      .then(response => { return response; })
-      .catch(error => { return error; }); // if there is an error it logs it to the console
+    const data = await fetch(url, fetchOptions)
+    const resp = await data.json(); // converts the response into json
+      // .catch(error => { return error; }); // if there is an error it logs it to the console
 
     return resp;
   }

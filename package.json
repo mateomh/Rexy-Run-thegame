@@ -1,10 +1,10 @@
 {
-  "name": "js-game",
+  "name": "run-rexy-run",
   "version": "1.0.0",
-  "description": "",
+  "description": "A platformer made with phaser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack --watch",
     "server": "webpack-dev-server --config webpack.config.js --open"
@@ -13,7 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/mateomh/JS-Game.git"
   },
-  "author": "",
+  "keywords": [
+    "JavaScript",
+    "DOM",
+    "Phaser",
+    "Platformer",
+    "Game"
+  ],
+  "author": "Mateom",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mateomh/JS-Game/issues"
@@ -22,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^6.2.1",
@@ -31,7 +39,10 @@
     "eslint-plugin-import": "^2.20.2",
     "file-loader": "^6.2.0",
     "image-webpack-loader": "^7.0.1",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
     "postcss": "^8.1.4",
+    "regenerator-runtime": "^0.13.7",
     "style-loader": "^2.0.0",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
