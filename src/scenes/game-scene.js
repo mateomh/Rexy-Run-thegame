@@ -13,6 +13,7 @@ export default class GameScene extends Phaser.Scene {
     this.myPlatforms = ['small', 'medium', 'large', 'extralarge'];
     this.myPlatformsWidths = [233, 385, 516, 641];
     this.activePlatforms = [];
+    this.activeItems = [];
     this.cursors = this.input.keyboard.createCursorKeys();
     // Creates the background on the screen
     this.add.image(500, 300, 'main-background');
@@ -44,8 +45,12 @@ export default class GameScene extends Phaser.Scene {
     // so it is not dragged by the platforms
     this.player.body.setVelocityX(gameOptions.platformStartSpeed);
 
+    this.spawnItem();
+
     // Makes a collision between the character and the platforms
     this.physics.add.collider(this.player, this.activePlatforms);
+
+    this.physics.add.overlap(this.player, this.activeItems, this.collectItem, null, this);
 
     // Adding events to interact with the character
     this.input.keyboard.on('keydown-UP', this.jump, this);
@@ -108,5 +113,21 @@ export default class GameScene extends Phaser.Scene {
     }
 
     return false;
+  }
+
+  spawnItem() {
+    const x = Phaser.Math.Between(gameOptions.itemSpawnRangeX[0], gameOptions.itemSpawnRangeX[1]);
+    const y = Phaser.Math.Between(gameOptions.itemSpawnRangeY[0], gameOptions.itemSpawnRangeY[1]);
+    const tempItem = this.physics.add.sprite(x, y, 'item');
+    tempItem.setScale(0.1);
+    tempItem.body.setVelocityX(gameOptions.platformStartSpeed * -1);
+    this.activeItems.push(tempItem);
+  }
+
+  collectItem() {
+    this.sys.game.globals.score += 200;
+    this.activeItems[0].destroy();
+    this.activeItems.shift();
+    this.spawnItem();
   }
 }
