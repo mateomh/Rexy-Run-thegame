@@ -31,7 +31,9 @@ export default class TitleScene extends Phaser.Scene {
   playClick() {
     const userInput = document.getElementById('username');
     if (userInput.value === '') return;
+
     this.sys.game.globals.username = userInput.value;
+    userInput.value = '';
     userInput.classList.toggle('hide');
     this.scene.start('Game');
   }

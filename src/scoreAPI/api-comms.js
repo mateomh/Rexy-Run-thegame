@@ -7,7 +7,7 @@ export default class ApiComms {
     };
   }
 
-  getScores() {
+  async getScores() {
     const url = `${this.config.apiURL}${this.config.gameid}/scores/`;
 
     const fetchOptions = {
@@ -17,10 +17,8 @@ export default class ApiComms {
       method: 'GET',
     };
 
-    const scores = fetch(url, fetchOptions)
-      .then(data => { return data.json(); }) // converts the response into json
-      .then(results => { console.log(results); })
-      .catch(error => { console.log(error); });
+    const data = await fetch(url, fetchOptions);
+    const { result: scores } = await data.json();
 
     return scores;
   }
@@ -41,8 +39,8 @@ export default class ApiComms {
 
     const resp = fetch(url, fetchOptions)
       .then(data => { return data.json(); }) // converts the response into json
-      .then(response => { console.log(response); })
-      .catch(error => { console.log(error); }); // if there is an error it logs it to the console
+      .then(response => { return response; })
+      .catch(error => { return error; }); // if there is an error it logs it to the console
 
     return resp;
   }

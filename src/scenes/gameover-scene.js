@@ -8,7 +8,7 @@ export default class GameOverScene extends Phaser.Scene {
   create() {
     const apiConn = this.sys.game.globals.apiLink;
 
-    // apiConn.addScore(this.sys.game.globals.username, this.sys.game.globals.score);
+    apiConn.addScore(this.sys.game.globals.username, this.sys.game.globals.score);
 
     const backbtn = this.add.sprite((this.game.config.width / 8), (this.game.config.height / 4) * 3, 'back');
     backbtn.setScale(0.5);
@@ -71,7 +71,8 @@ export default class GameOverScene extends Phaser.Scene {
     this.scene.start('Title');
   }
 
-  leaderClick(){
-
+  leaderClick() {
+    this.sys.game.globals.score = 0;
+    this.scene.start('ScoreBoard');
   }
 }
