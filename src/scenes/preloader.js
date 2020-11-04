@@ -20,6 +20,7 @@ import smallp from '../assets/platforms/small.png';
 import mediump from '../assets/platforms/medium.png';
 import largep from '../assets/platforms/large.png';
 import xlp from '../assets/platforms/extralarge.png';
+import item from '../assets/items/item1.png';
 
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -54,6 +55,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('medium', mediump);
     this.load.image('large', largep);
     this.load.image('extralarge', xlp);
+    this.load.image('item', item);
     Character.dinoRunPreload(this);
 
     this.timedEvent = this.time.delayedCall(5000, this.ready, [], this);
