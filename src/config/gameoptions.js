@@ -3,7 +3,7 @@ export default {
   minGap: 250,
   maxGap: 650,
   itemSpawnRangeX: [1500, 2500],
-  itemSpawnRangeY: [0, 500],
+  itemSpawnRangeY: [50, 350],
   playerGravity: 900,
   jumpForce: 600,
   playerStartPosition: 200,
