@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export, no-undef */
-import gameConfig from '../config/gameconfig';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -7,13 +6,15 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    const { game: { config: { width, height } } } = this;
+
     const userInput = document.getElementById('username');
     userInput.classList.toggle('hide');
     const logoScale = 0.65;
-    const logo = this.add.image((680 * logoScale) / 1.5, (gameConfig.height / 2), 'mainlogo');
+    const logo = this.add.image((680 * logoScale) / 1.5, (height / 2), 'mainlogo');
     logo.setScale(logoScale);
 
-    const playbtn = this.add.sprite((gameConfig.width / 4) * 3 + 50, (gameConfig.height / 4) * 3, 'play');
+    const playbtn = this.add.sprite((width / 4) * 3 + 50, (height / 4) * 3, 'play');
     playbtn.setScale(1);
     playbtn.setInteractive();
 

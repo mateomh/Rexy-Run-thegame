@@ -1,7 +1,6 @@
 import * as Phaser from 'phaser';
 
 import Character from '../config/character';
-import gameConfig from '../config/gameconfig';
 import mainlogo from '../assets/logos/main.png';
 import gameoverLogo from '../assets/logos/gameover.png';
 
@@ -29,8 +28,9 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
+    const { game: { config: { width, height } } } = this;
     Character.dinoWalkAnimation(this);
-    const logo = this.add.sprite(gameConfig.width / 2, gameConfig.height / 2, 'walk1');
+    const logo = this.add.sprite(width / 2, height / 2, 'walk1');
     logo.play('walk');
     logo.setScale(0.8);
 

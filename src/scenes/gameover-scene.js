@@ -6,11 +6,14 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   create() {
-    const apiConn = this.sys.game.globals.apiLink;
+    const { sys: { game: { globals: { username, score } } } } = this;
+    const { game: { config: { width, height } } } = this;
 
-    apiConn.addScore(this.sys.game.globals.username, this.sys.game.globals.score);
+    const { sys: { game: { globals: { apiLink } } } } = this;
 
-    const backbtn = this.add.sprite((this.game.config.width / 8), (this.game.config.height / 4) * 3, 'back');
+    apiLink.addScore(username, score);
+
+    const backbtn = this.add.sprite((width / 8), (height / 4) * 3, 'back');
     backbtn.setScale(0.5);
     backbtn.setInteractive();
 
@@ -22,7 +25,7 @@ export default class GameOverScene extends Phaser.Scene {
       backbtn.setTexture('back');
     });
 
-    const homebtn = this.add.sprite((this.game.config.width / 8) * 2, (this.game.config.height / 4) * 3, 'home');
+    const homebtn = this.add.sprite((width / 8) * 2, (height / 4) * 3, 'home');
     homebtn.setScale(0.5);
     homebtn.setInteractive();
 
@@ -34,7 +37,7 @@ export default class GameOverScene extends Phaser.Scene {
       homebtn.setTexture('home');
     });
 
-    const leaderbtn = this.add.sprite((this.game.config.width / 8) * 3, (this.game.config.height / 4) * 3, 'leader');
+    const leaderbtn = this.add.sprite((width / 8) * 3, (height / 4) * 3, 'leader');
     leaderbtn.setScale(0.5);
     leaderbtn.setInteractive();
 
@@ -46,7 +49,7 @@ export default class GameOverScene extends Phaser.Scene {
       leaderbtn.setTexture('leader');
     });
 
-    const logo = this.add.image((this.game.config.width / 4) * 3, (this.game.config.height / 2), 'gameover');
+    const logo = this.add.image((width / 4) * 3, (height / 2), 'gameover');
     logo.setScale(0.7);
 
     const fontOptions = {
@@ -57,7 +60,7 @@ export default class GameOverScene extends Phaser.Scene {
       strokeThickness: 10,
       stroke: '#81b214',
     };
-    this.gameText = this.add.text(40, (this.game.config.height / 4), `Your Score: ${this.sys.game.globals.score}`, fontOptions);
+    this.gameText = this.add.text(40, (height / 4), `Your Score: ${this.sys.game.globals.score}`, fontOptions);
   }
 
   backClick() {

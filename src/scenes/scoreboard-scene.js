@@ -1,9 +1,9 @@
 import * as Phaser from 'phaser';
-import gameConfig from '../config/gameconfig';
 
 export default class ScoreBoardScene extends Phaser.Scene {
   async create() {
-    const midpoint = (gameConfig.width / 8);
+    const { game: { config: { width, height } } } = this;
+    const midpoint = (width / 8);
 
     const fontOptions = {
       fontSize: '50px',
@@ -13,7 +13,7 @@ export default class ScoreBoardScene extends Phaser.Scene {
       strokeThickness: 10,
       stroke: '#892cdc',
     };
-    const titleText = this.add.text(0, (gameConfig.height / 8), 'LOADING SCORES.....', fontOptions);
+    const titleText = this.add.text(0, (height / 8), 'LOADING SCORES.....', fontOptions);
     titleText.x = midpoint;
 
     const top = await this.getTopScores();
@@ -23,13 +23,13 @@ export default class ScoreBoardScene extends Phaser.Scene {
 
     for (let i = 0; i < top.length; i += 1) {
       const { score, user } = top[i];
-      const scoreText = this.add.text(0, (gameConfig.height / 8) * (i + 2), `${i + 1}. ${user}  ${score}`, fontOptions);
+      const scoreText = this.add.text(0, (height / 8) * (i + 2), `${i + 1}. ${user}  ${score}`, fontOptions);
       scoreText.x = midpoint;
     }
 
     titleText.text = 'HIGH SCORES';
 
-    const backbtn = this.add.sprite((gameConfig.width / 8) * 7, (gameConfig.height / 3), 'back');
+    const backbtn = this.add.sprite((width / 8) * 7, (height / 3), 'back');
     backbtn.setScale(0.5);
     backbtn.setInteractive();
 
@@ -41,7 +41,7 @@ export default class ScoreBoardScene extends Phaser.Scene {
       backbtn.setTexture('back');
     });
 
-    const homebtn = this.add.sprite((gameConfig.width / 8) * 7, (gameConfig.height / 3) * 2, 'home');
+    const homebtn = this.add.sprite((width / 8) * 7, (height / 3) * 2, 'home');
     homebtn.setScale(0.5);
     homebtn.setInteractive();
 
@@ -55,7 +55,8 @@ export default class ScoreBoardScene extends Phaser.Scene {
   }
 
   async getTopScores() {
-    const apiConn = this.sys.game.globals.apiLink;
+    const { sys: { game: { globals: { apiLink: apiConn } } } } = this;
+
     const scores = await apiConn.getScores();
     const points = scores.map(item => item.score);
     let leaderLength = 5;

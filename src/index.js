@@ -7,23 +7,8 @@ import PreloaderScene from './scenes/preloader';
 import ScoreBoardScene from './scenes/scoreboard-scene';
 import gameConfig from './config/gameconfig';
 
-// import css from './css/styles.css';
 import './css/styles.css';
 import ApiComms from './scoreAPI/api-comms';
-
-// const header = document.getElementsByTagName('head')[0];
-// const styleSheet = document.createElement('link');
-
-// styleSheet.rel = 'stylesheet';
-// styleSheet.href = css;
-
-// const styleSheet = document.createElement('style');
-
-// styleSheet.innerHTML = css;
-
-// console.log(css);
-
-// header.appendChild(styleSheet);
 
 const apiLink = new ApiComms();
 
