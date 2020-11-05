@@ -13,7 +13,7 @@ export default class ScoreBoardScene extends Phaser.Scene {
       strokeThickness: 10,
       stroke: '#892cdc',
     };
-    const titleText = this.add.text(0, (gameConfig.height / 8), 'HIGH SCORES', fontOptions);
+    const titleText = this.add.text(0, (gameConfig.height / 8), 'LOADING SCORES.....', fontOptions);
     titleText.x = midpoint;
 
     const top = await this.getTopScores();
@@ -26,6 +26,8 @@ export default class ScoreBoardScene extends Phaser.Scene {
       const scoreText = this.add.text(0, (gameConfig.height / 8) * (i + 2), `${i + 1}. ${user}  ${score}`, fontOptions);
       scoreText.x = midpoint;
     }
+
+    titleText.text = 'HIGH SCORES';
 
     const backbtn = this.add.sprite((gameConfig.width / 8) * 7, (gameConfig.height / 3), 'back');
     backbtn.setScale(0.5);
