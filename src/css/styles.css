@@ -4,6 +4,7 @@
 
 .username {
   position: absolute;
+  visibility: visible;
   left: 650px;
   top: 190px;
   text-align: center;
@@ -20,4 +21,5 @@
 
 .hide {
   display: none;
+  visibility: hidden;
 }
