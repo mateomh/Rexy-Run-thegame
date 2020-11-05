@@ -2,7 +2,7 @@
   color: #d2e603;
 }
 
-#username {
+.username {
   position: absolute;
   left: 650px;
   top: 190px;
