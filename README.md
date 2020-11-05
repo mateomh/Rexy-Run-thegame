@@ -29,7 +29,7 @@ When you fire up the game, you are welcomed by a walking Rexy loading screen. Af
 
 On this screen, you will have to enter your name so the game can start. If no name is entered the game will not start.
 
-Then you will go into the game itself, where Rexy will start running on a long platform. To jump you can either use the up arrow on your keyboard or a mouse click.
+Then you will go into the game itself, where Rexy will start running on a long platform. To **make Rexy jump** you can either use the **up arrow** on your keyboard or a **mouse click**.
 
 ![screenshot](./screenshots/gameplay.png)
 
