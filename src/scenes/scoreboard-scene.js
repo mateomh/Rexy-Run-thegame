@@ -3,7 +3,7 @@ import gameConfig from '../config/gameconfig';
 
 export default class ScoreBoardScene extends Phaser.Scene {
   async create() {
-    const midpoint = (gameConfig.width / 4);
+    const midpoint = (gameConfig.width / 8);
 
     const fontOptions = {
       fontSize: '50px',
