@@ -1,6 +1,5 @@
 import * as Phaser from 'phaser';
 import PreloaderScene from '../../src/scenes/preloader';
-import TitleScene from '../../src/scenes/title-scene';
 import gameConfig from '../../src/config/gameconfig';
 
 const game = new Phaser.Game(gameConfig);
